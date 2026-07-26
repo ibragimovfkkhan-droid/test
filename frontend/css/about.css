@@ -1,0 +1,62 @@
+/* about.html — page-specific styles */
+
+.intro-block{max-width:760px; margin:0 auto; padding:0 6vw 90px; text-align:center;}
+.intro-block p{font-size:17px; line-height:1.8; color:var(--grey);}
+
+.mission{background:var(--sky); padding:90px 6vw;}
+.mission-inner{max-width:1280px; margin:0 auto; display:grid; grid-template-columns:0.8fr 1.2fr; gap:60px; align-items:center;}
+
+/* Fix: carousel images were capped at 280px (inherited from the shared
+   .product-carousel rule) even though this carousel sits in a wider column,
+   which made it look tiny/broken. Let it fill its own column instead. */
+.mission .product-carousel{max-width:460px; margin:0 auto;}
+.mission .product-carousel .owl-item img{
+  border-radius:22px; width:100%; max-width:none; box-shadow:0 30px 60px -20px rgba(11,37,69,0.2);
+}
+
+.mission-text .eyebrow{color:var(--azure-deep); font-weight:600; font-size:13px; letter-spacing:0.08em; text-transform:uppercase;}
+.mission-text h2{font-size:clamp(26px,3vw,38px); margin:12px 0 18px;}
+.mission-text p{font-size:15.5px; line-height:1.8; color:var(--grey);}
+
+.values{padding:100px 6vw;}
+.values-grid{max-width:1280px; margin:0 auto; display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+.value-card{border:1px solid rgba(11,37,69,0.08); border-radius:22px; padding:36px 30px;}
+.value-card .num{font-family:'Space Grotesk',sans-serif; font-size:32px; color:var(--azure); margin-bottom:16px;}
+.value-card h3{font-size:19px; margin-bottom:10px;}
+.value-card p{font-size:14px; color:var(--grey); line-height:1.7;}
+
+.team{background:var(--navy); color:var(--white); padding:100px 6vw;}
+.team-inner{max-width:760px; margin:0 auto; text-align:center;}
+.team .eyebrow{color:var(--mint); font-weight:600; font-size:13px; letter-spacing:0.08em; text-transform:uppercase;}
+.team h2{font-size:clamp(26px,3vw,40px); margin:12px 0 20px;}
+.team p{font-size:15.5px; line-height:1.8; color:rgba(255,255,255,0.75);}
+.team .social-row{justify-content:center; margin-top:26px;}
+.team-photo{width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 auto 26px; border:3px solid rgba(255,255,255,0.15); display:block;}
+
+@media(max-width:900px){
+  .mission-inner{grid-template-columns:1fr;}
+  .values-grid{grid-template-columns:1fr;}
+}
+
+@media(max-width:480px){
+  .mission{padding:60px 6vw;}
+  .mission .product-carousel{max-width:100%;}
+  .value-card{padding:28px 22px;}
+  .team-photo{width:96px; height:96px;}
+}
+
+@media(max-width:768px){.mission .owl-stage-outer,.mission .owl-stage{overflow:hidden}.mission .item{display:flex;justify-content:center}.mission .item img{width:100%;height:auto;max-width:340px;object-fit:contain}}
+
+
+@media (max-width:768px){
+.product-showcase,.carousel,.owl-carousel,.swiper,.showcase-slider{width:100%!important;max-width:100%!important;overflow:hidden!important;}
+.owl-stage{display:flex;}
+.owl-item,.swiper-slide{width:100%!important;}
+.owl-item img,.swiper-slide img,.product-showcase img{
+width:100%!important;
+height:auto!important;
+object-fit:contain!important;
+}
+.owl-nav,.swiper-button-next,.swiper-button-prev{display:none!important;}
+body{overflow-x:hidden!important;}
+}

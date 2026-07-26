@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aloqa — Velira</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/contact.css">
+</head>
+<body>
+<div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
+<script>
+  (function(){
+    var hidden = false;
+    function hideLoader(){
+      if(hidden) return;
+      hidden = true;
+      var l = document.getElementById('pageLoader');
+      if(l) l.classList.add('hide');
+    }
+    window.addEventListener('load', function(){ setTimeout(hideLoader, 280); });
+    setTimeout(hideLoader, 1800); // safety fallback
+  })();
+</script>
+
+<div id="site-header"></div>
+
+<section class="page-hero">
+  <span class="eyebrow" data-i="contactEyebrow">Aloqa</span>
+  <h1 data-i="contactTitle">Biz bilan bog'laning</h1>
+  <p data-i="contactSub">Savol, taklif yoki hamkorlik uchun quyidagi forma orqali yozing — yoki to'g'ridan-to'g'ri Telegramga o'ting.</p>
+</section>
+
+<div class="contact-wrap">
+  <div class="contact-info">
+    <span class="eyebrow" data-i="contactInfoEyebrow">Bog'lanish</span>
+    <h3 data-i="contactInfoTitle">To'g'ridan-to'g'ri aloqa</h3>
+    <p data-i="contactInfoText">Tezkor javob uchun Telegram orqali yozishni tavsiya qilamiz.</p>
+
+    <a class="telegram-cta" href="https://t.me/velira_uz" target="_blank" rel="noopener">
+      <i class="fa-brands fa-telegram"></i>
+      <span data-i="telegramCtaBtn">Telegramda yozish</span>
+    </a>
+
+    <a class="info-row" href="https://t.me/velira_uz" target="_blank" rel="noopener">
+      <div class="info-icon" id="telegramIcon"></div>
+      <div><div class="label" data-i="contactTelegramLabel">Telegram</div><div class="value">@velira_uz</div></div>
+    </a>
+    <a class="info-row" href="https://instagram.com/velira.uz" target="_blank" rel="noopener">
+      <div class="info-icon" id="instagramIcon"></div>
+      <div><div class="label" data-i="contactInstagramLabel">Instagram</div><div class="value">@velira.uz</div></div>
+    </a>
+    <a class="info-row" href="tel:+998950170800">
+      <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+      <div><div class="label" data-i="contactPhoneLabel">Telefon</div><div class="value">+998 95 017 08 00</div></div>
+    </a>
+    <a class="info-row" href="tel:+998951000007">
+      <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+      <div><div class="label">Telefon (2)</div><div class="value">+998 95 100 00 07</div></div>
+    </a>
+    <a class="info-row" href="mailto:ssaid701@icloud.com">
+      <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+      <div><div class="label" data-i="contactEmailLabel">Email</div><div class="value">ssaid701@icloud.com</div></div>
+    </a>
+    <div class="info-row">
+      <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+      <div><div class="label" data-i="contactAddressLabel">Manzil</div><div class="value" data-i="contactAddressValue">Andijon shahri, O'zbekiston</div></div>
+    </div>
+  </div>
+
+  <div class="contact-form-card">
+    <div class="form-head">
+      <div class="form-head-icon"><i class="fa-solid fa-paper-plane"></i></div>
+      <div>
+        <h3 data-i="contactFormTitle">Xabar yuborish</h3>
+        <p data-i="contactFormSub">Odatda bir necha soat ichida javob beramiz.</p>
+      </div>
+    </div>
+    <form id="contactForm">
+      <div class="field-row">
+        <div class="field">
+          <label data-i="labelName">Ismingiz</label>
+          <div class="input-wrap"><i class="fa-solid fa-user"></i><input name="name" required data-i-placeholder="placeholderName" placeholder="Ism Familiya"></div>
+        </div>
+        <div class="field">
+          <label data-i="labelContact">Telefon yoki Telegram</label>
+          <div class="input-wrap"><i class="fa-solid fa-phone"></i><input name="contact" required data-i-placeholder="placeholderContact" placeholder="+998 90 000 00 00 yoki @username"></div>
+        </div>
+      </div>
+      <div class="field">
+        <label data-i="labelEmail">Email</label>
+        <div class="input-wrap"><i class="fa-solid fa-envelope"></i><input type="email" name="email" required data-i-placeholder="placeholderEmail" placeholder="email@example.com"></div>
+      </div>
+      <div class="field">
+        <label data-i="labelMessage">Xabar</label>
+        <div class="input-wrap input-wrap-area"><i class="fa-solid fa-message"></i><textarea name="message" required data-i-placeholder="placeholderMessage" placeholder="Savolingizni yozing..."></textarea></div>
+      </div>
+      <button type="submit" class="modal-submit"><span class="btn-label" data-i="sendMessage">Yuborish</span><i class="fa-solid fa-arrow-right btn-arrow"></i><span class="btn-spinner"></span></button>
+      <div class="form-status" id="contactStatus"></div>
+    </form>
+  </div>
+</div>
+
+<div class="brand-strip">
+  <div class="brand-card">
+    <div class="brand-col">
+      <div class="brand-name" data-i="brandLabel">Brend</div>
+      <p><b>Velira</b><br><span data-i="brandTagline">Konsentrlangan kir yuvish listlari brendi.</span></p>
+    </div>
+    <div class="brand-col">
+      <h4 data-i="pricesLabel">Narxlar</h4>
+      <div class="price-line"><span data-i="price100Label">100 talik</span><b>79 000 <span data-i="somWord">so'm</span></b></div>
+      <div class="price-line"><span data-i="price60Label">60 talik</span><b>59 000 <span data-i="somWord">so'm</span></b></div>
+    </div>
+    <div class="brand-col">
+      <h4 data-i="originLabel">Kelib chiqishi</h4>
+      <div class="price-line"><span data-i="originMakeLabel">Ishlab chiqarish</span><b data-i="originMakeVal">Xitoy</b></div>
+      <div class="price-line"><span data-i="originRawLabel">Xom-ashyo</span><b data-i="originRawVal">Italiya</b></div>
+    </div>
+  </div>
+</div>
+
+<div id="site-footer"></div>
+
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-head">
+    <h3 data-i="cartTitle">Sizning savatingiz</h3>
+    <button class="close-btn" id="closeCartBtn">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-drawer-foot" id="cartFoot">
+    <div class="cart-total-row"><span data-i="cartTotal">Jami</span><span id="cartTotalValue">0 UZS</span></div>
+    <button class="checkout-btn" id="checkoutBtn" data-i="checkoutBtn">Buyurtma berish</button>
+  </div>
+</div>
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal">
+    <h3 data-i="checkoutTitle">Buyurtmani rasmiylashtirish</h3>
+    <p class="modal-sub" data-i="checkoutSub">Ma'lumotlaringizni qoldiring — administrator siz bilan bog'lanadi.</p>
+    <form id="checkoutForm">
+      <div class="field"><label data-i="labelName">Ismingiz</label><input name="name" required data-i-placeholder="placeholderName" placeholder="Ism Familiya"></div>
+      <div class="field"><label data-i="labelPhone">Telefon raqam</label><input name="phone" required data-i-placeholder="placeholderPhone" placeholder="+998 90 000 00 00"></div>
+      <div class="field"><label data-i="labelEmail">Email (ixtiyoriy)</label><input type="email" name="email" data-i-placeholder="placeholderEmail" placeholder="email@example.com"></div>
+      <div class="field"><label data-i="labelAddress">Manzil (ixtiyoriy)</label><input name="address" data-i-placeholder="placeholderAddress" placeholder="Shahar, ko'cha, uy"></div>
+      <div class="field"><label data-i="labelComment">Izoh (ixtiyoriy)</label><textarea name="comment" data-i-placeholder="placeholderComment" placeholder="Qo'shimcha izoh..."></textarea></div>
+      <button type="submit" class="modal-submit"><span class="btn-label" data-i="submitOrder">Buyurtmani tasdiqlash</span><span class="btn-spinner"></span></button>
+      <div class="form-status" id="orderStatus"></div>
+    </form>
+    <button class="close-btn close-btn-abs" id="closeCheckoutBtn">✕</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init({ publicKey: "0HBwuawTW_FpYC_cB" });</script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="js/telegram-webapp.js"></script>
+<script src="js/components.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  renderHeader('contact');
+  renderFooter();
+  document.getElementById('telegramIcon').innerHTML = ICON_TELEGRAM;
+  document.getElementById('instagramIcon').innerHTML = ICON_INSTAGRAM;
+
+  document.getElementById('contactForm').addEventListener('submit', async (e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const statusEl = document.getElementById('contactStatus');
+    const btn = form.querySelector('button[type=submit]');
+    const labelEl = btn.querySelector('.btn-label');
+    const originalBtnText = labelEl.textContent;
+    btn.disabled = true;
+    btn.classList.add('loading');
+    statusEl.textContent = '';
+    statusEl.className = 'form-status';
+    try{
+      const templateParams = {
+        type: "Yangi xabar (Aloqa formasi)",
+        name: form.name.value,
+        contact: form.contact.value,
+        email: form.email.value,
+        phone: "—",
+        address: "—",
+        message: form.message.value,
+        order_items: "—",
+        order_total: "—",
+        reply_to: form.email.value,
+      };
+      await emailjs.send('service_rdyv22j', 'template_48si1yf', templateParams);
+
+      // Best-effort: also try to save to backend, but don't block success on it
+      try {
+        await apiSendContact({
+          name: form.name.value,
+          contact: form.contact.value,
+          message: form.message.value
+        });
+      } catch (backendErr) {
+        // backend may be offline; email delivery is what matters here
+      }
+
+      btn.classList.remove('loading');
+      statusEl.textContent = currentLangText('msgSuccess');
+      statusEl.classList.add('success');
+      labelEl.textContent = `${currentLangText('sentBtn')} ✅`;
+      btn.classList.add('btn-sent');
+      form.reset();
+      setTimeout(()=>{ labelEl.textContent = originalBtnText; btn.classList.remove('btn-sent'); }, 2600);
+    }catch(err){
+      console.error('EmailJS error:', err);
+      const detail = (err && (err.text || err.message)) ? ` (${err.text || err.message})` : '';
+      btn.classList.remove('loading');
+      statusEl.textContent = currentLangText('msgError') + detail;
+      statusEl.classList.add('error');
+      labelEl.textContent = `${currentLangText('errorBtn')} ❌`;
+      btn.classList.add('btn-error');
+      setTimeout(()=>{ labelEl.textContent = originalBtnText; btn.classList.remove('btn-error'); }, 2600);
+    }finally{
+      btn.disabled = false;
+    }
+  });
+</script>
+</body>
+</html>

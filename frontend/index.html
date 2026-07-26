@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Velira — Kir yuvish listlari | ANDIJON</title>
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <meta name="description"
+    content="Velira — konsentrlangan kir yuvish listlari. Fosfatsiz, gipoallergen, safar uchun qulay. Toshkent bo'ylab yetkazib berish.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+  <div class="page-loader" id="pageLoader">
+    <div class="loader-ring"></div>
+  </div>
+  <script>
+    (function () {
+      var hidden = false;
+      function hideLoader() {
+        if (hidden) return;
+        hidden = true;
+        var l = document.getElementById('pageLoader');
+        if (l) l.classList.add('hide');
+      }
+      window.addEventListener('load', function () { setTimeout(hideLoader, 280); });
+      setTimeout(hideLoader, 1800); // safety fallback
+    })();
+  </script>
+
+  <div id="site-header"></div>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div>
+        <span class="pill">🌊 <span data-i="pill">Yangi: Ocean seriyasi</span></span>
+        <h1 data-i="heroTitle">Kir yuvish<br><span class="accent">juda oson</span></h1>
+        <p class="sub" data-i="heroSub">Poroshoksiz, o'lchovsiz, dozasiz. Velira — konsentrlangan kir yuvish listlari,
+          har qanday mashinaga mos.</p>
+        <div class="cta-row">
+          <a href="shop.html" class="btn-solid" data-i="ctaBtn1">Hoziroq xarid qiling</a>
+          <a href="#steps" class="btn-outline" data-i="ctaBtn2">Qanday ishlaydi</a>
+        </div>
+        <div class="stat-row">
+          <div class="stat"><b>100+</b><span data-i="stat1">stirka bir qutida</span></div>
+          <div class="stat"><b>0%</b><span data-i="stat2">fosfat va xlor</span></div>
+          <div class="stat"><b>20°C</b><span data-i="stat3">sovuq suvda ham ishlaydi</span></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="blob blob1"></div>
+        <div class="droplet droplet-a"></div>
+        <div class="droplet droplet-b"></div>
+        <a href="shop.html" aria-label="Do'konga o'tish">
+          <img src="images/ocean-2.jpg" alt="Velira Ocean">
+        </a>
+      </div>
+    </div>
+    <svg class="wave" viewBox="0 0 1440 100" preserveAspectRatio="none">
+      <path d="M0,40 C240,90 480,0 720,30 C960,60 1200,10 1440,50 L1440,100 L0,100 Z" fill="#0B2545"></path>
+    </svg>
+  </section>
+
+  <div class="ticker-band">
+    <div class="ticker-track">
+      <span data-i="t1">FOSFATSIZ</span><span>•</span><span data-i="t2">TO'LIQ ERIYDI</span><span>•</span><span
+        data-i="t3">GIPOALLERGEN</span><span>•</span><span data-i="t4">SAFAR UCHUN QULAY</span><span>•</span>
+      <span data-i="t1">FOSFATSIZ</span><span>•</span><span data-i="t2">TO'LIQ ERIYDI</span><span>•</span><span
+        data-i="t3">GIPOALLERGEN</span><span>•</span><span data-i="t4">SAFAR UCHUN QULAY</span><span>•</span>
+    </div>
+  </div>
+
+  <section class="features" id="features">
+    <div class="section-head">
+      <span class="eyebrow" data-i="featEyebrow">Nega Velira</span>
+      <h2 data-i="featTitle">Kichik list, katta natija</h2>
+    </div>
+    <div class="feature-cards">
+      <div class="fcard">
+        <div class="icon"><i class="fa-solid fa-leaf"></i></div>
+        <h3 data-i="f1t">Bioparchalanuvchi</h3>
+        <p data-i="f1d">Tabiat va septik tizimlar uchun xavfsiz tarkib.</p>
+        <svg class="card-illust" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="34" y="38" width="46" height="62" rx="8" fill="var(--azure-deep)" opacity="0.16" />
+          <rect x="34" y="38" width="46" height="62" rx="8" stroke="var(--azure-deep)" stroke-width="2.2"
+            opacity="0.5" />
+          <rect x="46" y="26" width="22" height="14" rx="3" fill="var(--azure-deep)" opacity="0.5" />
+          <circle cx="57" cy="66" r="12" fill="var(--mint)" opacity="0.9" />
+          <path d="M52 66c0-5 3-9 8-10-1 5-1 8 2 11-4 2-8 2-10-1z" fill="var(--azure-deep)" opacity="0.7" />
+          <rect x="42" y="82" width="30" height="6" rx="3" fill="var(--azure-deep)" opacity="0.35" />
+        </svg>
+      </div>
+      <div class="fcard">
+        <div class="icon"><i class="fa-solid fa-droplet"></i></div>
+        <h3 data-i="f2t">To'liq eriydi</h3>
+        <p data-i="f2d">Sovuq suvda ham izsiz eriydi, mashinani toza saqlaydi.</p>
+        <svg class="card-illust" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="24" y="26" width="72" height="74" rx="12" fill="var(--azure-deep)" opacity="0.14" />
+          <rect x="24" y="26" width="72" height="74" rx="12" stroke="var(--azure-deep)" stroke-width="2.2"
+            opacity="0.5" />
+          <rect x="34" y="34" width="10" height="6" rx="2" fill="var(--azure-deep)" opacity="0.5" />
+          <rect x="50" y="34" width="10" height="6" rx="2" fill="var(--azure-deep)" opacity="0.5" />
+          <circle cx="60" cy="68" r="20" fill="var(--white)" />
+          <circle cx="60" cy="68" r="20" stroke="var(--azure-deep)" stroke-width="2.2" opacity="0.6" />
+          <path d="M60 58c5 6 8 10 8 14a8 8 0 1 1-16 0c0-4 3-8 8-14z" fill="var(--mint)" />
+          <circle cx="75" cy="52" r="3" fill="var(--mint)" opacity="0.8" />
+          <circle cx="81" cy="60" r="2" fill="var(--mint)" opacity="0.6" />
+        </svg>
+      </div>
+      <div class="fcard">
+        <div class="icon"><i class="fa-solid fa-shirt"></i></div>
+        <h3 data-i="f3t">Matoni asraydi</h3>
+        <p data-i="f3d">Rangni va tolalar tuzilishini uzoq vaqt saqlaydi.</p>
+        <svg class="card-illust" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="26" y="66" width="60" height="14" rx="5" fill="var(--azure-deep)" opacity="0.5" />
+          <rect x="30" y="50" width="52" height="14" rx="5" fill="var(--mint)" opacity="0.9" />
+          <rect x="26" y="34" width="60" height="14" rx="5" fill="var(--azure-deep)" opacity="0.28" />
+          <path d="M40 88h40l4 10H36z" fill="var(--azure-deep)" opacity="0.15" />
+        </svg>
+      </div>
+      <div class="fcard">
+        <div class="icon"><i class="fa-solid fa-suitcase-rolling"></i></div>
+        <h3 data-i="f4t">Safar uchun qulay</h3>
+        <p data-i="f4d">Yupqa, yengil, oqmaydi — chamadonga sig'adi.</p>
+        <svg class="card-illust" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="30" y="40" width="60" height="50" rx="10" fill="var(--azure-deep)" opacity="0.16" />
+          <rect x="30" y="40" width="60" height="50" rx="10" stroke="var(--azure-deep)" stroke-width="2.2"
+            opacity="0.5" />
+          <rect x="48" y="28" width="24" height="14" rx="4" fill="none" stroke="var(--azure-deep)" stroke-width="2.2"
+            opacity="0.5" />
+          <rect x="30" y="60" width="60" height="6" fill="var(--azure-deep)" opacity="0.3" />
+          <circle cx="42" cy="96" r="5" fill="var(--azure-deep)" opacity="0.5" />
+          <circle cx="78" cy="96" r="5" fill="var(--azure-deep)" opacity="0.5" />
+          <rect x="58" y="48" width="18" height="24" rx="3" fill="var(--mint)" opacity="0.9" />
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="products-teaser">
+    <div class="teaser-head">
+      <div>
+        <span class="eyebrow" data-i="homeProdEyebrow">Mahsulotlar</span>
+        <h2 data-i="homeProdTitle">Ikki hid, bir formula</h2>
+      </div>
+      <a href="shop.html" class="btn-outline" data-i="seeAll">Barchasini ko'rish →</a>
+    </div>
+    <div class="product-grid">
+      <div class="pcard ocean">
+        <div class="pimg">
+          <div class="owl-carousel product-carousel" id="oceanCarousel">
+            <div class="item"><img src="images/velira-ocean.jpg" alt="Velira Ocean"></div>
+            <div class="item"><img src="images/ocean-2.jpg" alt="Velira Ocean"></div>
+            <div class="item"><img src="images/ocean-3.jpg" alt="Velira Ocean"></div>
+            <div class="item"><img src="images/ocean-4.jpg" alt="Velira Ocean"></div>
+            <div class="item"><img src="images/ocean-5.jpg" alt="Velira Ocean"></div>
+            <div class="item"><img src="images/ocean-6.jpg" alt="Velira Ocean"></div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="tag-row"><span class="tag" data-i="tagOc">Ocean</span><span class="tag" data-i="tag60">60
+              stirka</span></div>
+          <h3>Velira Ocean</h3>
+          <p data-i="prodOceanDesc">Yangi va tiniq aroma, sovuq suvda ham samarali, kundalik foydalanish uchun.</p>
+          <div class="price-row">
+            <span class="price">59 000 UZS</span>
+            <button class="buy-btn" onclick="addToCart('ocean-60')" data-i="addToCart">Savatga qo'shish</button>
+          </div>
+        </div>
+      </div>
+      <div class="pcard lav">
+        <div class="pimg">
+          <div class="owl-carousel product-carousel" id="lavenderCarousel">
+            <div class="item"><img src="images/velira-lavender.jpg" alt="Velira Wild Lavender"></div>
+            <div class="item"><img src="images/lavender-2.jpg" alt="Velira Wild Lavender"></div>
+            <div class="item"><img src="images/lavender-3.jpg" alt="Velira Wild Lavender"></div>
+            <div class="item"><img src="images/lavender-4.jpg" alt="Velira Wild Lavender"></div>
+            <div class="item"><img src="images/lavender-5.jpg" alt="Velira Wild Lavender"></div>
+            <div class="item"><img src="images/lavender-6.jpg" alt="Velira Wild Lavender"></div>
+          </div>
+        </div>
+        <div class="pcard-body">
+          <div class="tag-row"><span class="tag" data-i="tagLav">Wild Lavender</span><span class="tag"
+              data-i="tag100">100 stirka</span></div>
+          <h3>Velira Wild Lavender</h3>
+          <p data-i="prodLavDesc">Dala lavandasining nafis hidi, uy uchun uzoq muddatli yangilik.</p>
+          <div class="price-row">
+            <span class="price">79 000 UZS</span>
+            <button class="buy-btn" onclick="addToCart('wild-lavender-100')" data-i="addToCart">Savatga
+              qo'shish</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="steps" id="steps">
+    <div class="section-head">
+      <span class="eyebrow" data-i="stepEyebrow">Foydalanish</span>
+      <h2 data-i="stepTitle">Uch qadam, bir natija</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card"><span class="snum">1</span>
+        <h4 data-i="s1t">Listni oling</h4>
+        <p data-i="s1d">Kerakli miqdorni ajratib oling — kichik yuklama uchun yarmi yetadi.</p>
+      </div>
+      <div class="step-card"><span class="snum">2</span>
+        <h4 data-i="s2t">Barabanga soling</h4>
+        <p data-i="s2d">Kiyimlar bilan birga to'g'ridan-to'g'ri joylang.</p>
+      </div>
+      <div class="step-card"><span class="snum">3</span>
+        <h4 data-i="s3t">Yuvishni boshlang</h4>
+        <p data-i="s3d">Har qanday dastur va haroratda ishlaydi.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="cta-banner">
+    <div>
+      <h2 data-i="homeCtaTitle">Birinchi buyurtmangizni bering</h2>
+      <p data-i="homeCtaSub">Andijon bo'ylab yetkazib berish 24 soat ichida.</p>
+    </div>
+    <a href="shop.html" class="btn-solid" data-i="homeCtaBtn">Xarid qilishni boshlash</a>
+  </div>
+
+  <div id="site-footer"></div>
+
+  <!-- Cart drawer -->
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-head">
+      <h3 data-i="cartTitle">Sizning savatingiz</h3>
+      <button class="close-btn" id="closeCartBtn">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-drawer-foot" id="cartFoot">
+      <div class="cart-total-row"><span data-i="cartTotal">Jami</span><span id="cartTotalValue">0 UZS</span></div>
+      <button class="checkout-btn" id="checkoutBtn" data-i="checkoutBtn">Buyurtma berish</button>
+    </div>
+  </div>
+
+  <!-- Checkout modal -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal">
+      <h3 data-i="checkoutTitle">Buyurtmani rasmiylashtirish</h3>
+      <p class="modal-sub" data-i="checkoutSub">Ma'lumotlaringizni qoldiring — administrator siz bilan bog'lanadi.</p>
+      <form id="checkoutForm">
+        <div class="field"><label data-i="labelName">Ismingiz</label><input name="name" required
+            data-i-placeholder="placeholderName" placeholder="Ism Familiya"></div>
+        <div class="field"><label data-i="labelPhone">Telefon raqam</label><input name="phone" required
+            data-i-placeholder="placeholderPhone" placeholder="+998 90 000 00 00"></div>
+        <div class="field"><label data-i="labelEmail">Email (ixtiyoriy)</label><input type="email" name="email"
+            data-i-placeholder="placeholderEmail" placeholder="email@example.com"></div>
+        <div class="field"><label data-i="labelAddress">Manzil (ixtiyoriy)</label><input name="address"
+            data-i-placeholder="placeholderAddress" placeholder="Shahar, ko'cha, uy"></div>
+        <div class="field"><label data-i="labelComment">Izoh (ixtiyoriy)</label><textarea name="comment"
+            data-i-placeholder="placeholderComment" placeholder="Qo'shimcha izoh..."></textarea></div>
+        <button type="submit" class="modal-submit"><span class="btn-label" data-i="submitOrder">Buyurtmani
+            tasdiqlash</span><span class="btn-spinner"></span></button>
+        <div class="form-status" id="orderStatus"></div>
+      </form>
+      <button class="close-btn close-btn-abs" id="closeCheckoutBtn">✕</button>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>emailjs.init({ publicKey: "0HBwuawTW_FpYC_cB" });</script>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="js/telegram-webapp.js"></script>
+<script src="js/components.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/cart.js"></script>
+  <script>
+    renderHeader('home');
+    renderFooter();
+
+    $(function () {
+      $('.product-carousel').owlCarousel({
+        items: 1,
+        loop: true,
+        dots: true,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        smartSpeed: 600,
+        mouseDrag: true,
+        touchDrag: true
+      });
+    });
+  </script>
+</body>
+
+</html>

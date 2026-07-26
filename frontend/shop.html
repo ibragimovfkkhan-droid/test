@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahsulotlar — Velira</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/shop.css">
+</head>
+<body>
+<div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
+<script>
+  (function(){
+    var hidden = false;
+    function hideLoader(){
+      if(hidden) return;
+      hidden = true;
+      var l = document.getElementById('pageLoader');
+      if(l) l.classList.add('hide');
+    }
+    window.addEventListener('load', function(){ setTimeout(hideLoader, 280); });
+    setTimeout(hideLoader, 1800); // safety fallback
+  })();
+</script>
+
+<div id="site-header"></div>
+
+<section class="page-hero">
+  <span class="eyebrow" data-i="shopEyebrow">Katalog</span>
+  <h1 data-i="shopTitle">Barcha mahsulotlar</h1>
+  <p data-i="shopSub">Ikkala hidimiz ham bir xil kuchli formulaga ega — sizga yoqqanini tanlang.</p>
+</section>
+
+<div class="shop-grid" id="shopGrid">
+  <!-- product cards injected by JS -->
+</div>
+
+<div id="site-footer"></div>
+
+<!-- Cart drawer -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-head">
+    <h3 data-i="cartTitle">Sizning savatingiz</h3>
+    <button class="close-btn" id="closeCartBtn">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-drawer-foot" id="cartFoot">
+    <div class="cart-total-row"><span data-i="cartTotal">Jami</span><span id="cartTotalValue">0 UZS</span></div>
+    <button class="checkout-btn" id="checkoutBtn" data-i="checkoutBtn">Buyurtma berish</button>
+  </div>
+</div>
+
+<!-- Checkout modal -->
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal">
+    <h3 data-i="checkoutTitle">Buyurtmani rasmiylashtirish</h3>
+    <p class="modal-sub" data-i="checkoutSub">Ma'lumotlaringizni qoldiring — administrator siz bilan bog'lanadi.</p>
+    <form id="checkoutForm">
+      <div class="field"><label data-i="labelName">Ismingiz</label><input name="name" required data-i-placeholder="placeholderName" placeholder="Ism Familiya"></div>
+      <div class="field"><label data-i="labelPhone">Telefon raqam</label><input name="phone" required data-i-placeholder="placeholderPhone" placeholder="+998 90 000 00 00"></div>
+      <div class="field"><label data-i="labelEmail">Email (ixtiyoriy)</label><input type="email" name="email" data-i-placeholder="placeholderEmail" placeholder="email@example.com"></div>
+      <div class="field"><label data-i="labelAddress">Manzil (ixtiyoriy)</label><input name="address" data-i-placeholder="placeholderAddress" placeholder="Shahar, ko'cha, uy"></div>
+      <div class="field"><label data-i="labelComment">Izoh (ixtiyoriy)</label><textarea name="comment" data-i-placeholder="placeholderComment" placeholder="Qo'shimcha izoh..."></textarea></div>
+      <button type="submit" class="modal-submit"><span class="btn-label" data-i="submitOrder">Buyurtmani tasdiqlash</span><span class="btn-spinner"></span></button>
+      <div class="form-status" id="orderStatus"></div>
+    </form>
+    <button class="close-btn close-btn-abs" id="closeCheckoutBtn">✕</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init({ publicKey: "0HBwuawTW_FpYC_cB" });</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="js/telegram-webapp.js"></script>
+<script src="js/components.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  renderHeader('shop');
+  renderFooter();
+
+  async function renderShopGrid(){
+    const grid = document.getElementById('shopGrid');
+    const lang = localStorage.getItem('velira_lang') || 'ru';
+    try{
+      const products = await ensureProducts();
+      grid.innerHTML = products.map(p => {
+        const imgs = (p.images && p.images.length ? p.images : [p.image]);
+        const slides = imgs.map(src => `<div class="item"><img src="${src}" alt="${p.name[lang]}"></div>`).join('');
+        return `
+        <div class="pcard">
+          <div class="pimg">
+            <div class="owl-carousel product-carousel" data-carousel-id="${p.id}">${slides}</div>
+          </div>
+          <div class="pcard-body">
+            <div class="tag-row">
+              <span class="tag">${p.scent}</span>
+              <span class="tag">${p.loads} ${lang === 'ru' ? 'стирок' : 'stirka'}</span>
+            </div>
+            <h3>${p.name[lang]}</h3>
+            <p>${p.description[lang]}</p>
+            <div class="price-row">
+              <span class="price">${p.price.toLocaleString('uz-UZ')} ${p.currency}</span>
+              <button class="buy-btn" data-i="addToCart" onclick="quickAdd('${p.id}', this)">Savatga qo'shish</button>
+            </div>
+          </div>
+        </div>
+      `;
+      }).join('');
+      initShopCarousels();
+    }catch(err){
+      grid.innerHTML = `<p class="grid-error-msg">Mahsulotlarni yuklab bo'lmadi. Backend ishga tushirilganini tekshiring.</p>`;
+    }
+  }
+
+  function initShopCarousels(){
+    if(window.jQuery && jQuery.fn.owlCarousel){
+      jQuery('.product-carousel').owlCarousel({
+        items: 1,
+        loop: true,
+        dots: true,
+        nav: true,
+        autoplay: true,
+        autoplayTimeout: 5000,
+        autoplayHoverPause: true,
+        smartSpeed: 600,
+        mouseDrag: true,
+        touchDrag: true
+      });
+    }
+  }
+
+  function quickAdd(id, btn){
+    addToCart(id);
+    const original = btn.textContent;
+    btn.textContent = currentLangText('inCart') || 'Qo\'shildi';
+    btn.classList.add('added');
+    setTimeout(()=>{ btn.textContent = original; btn.classList.remove('added'); }, 1400);
+  }
+
+  document.addEventListener('langchange', renderShopGrid);
+  renderShopGrid();
+</script>
+</body>
+</html>

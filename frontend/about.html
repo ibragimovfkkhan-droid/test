@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Biz haqimizda — Velira</title>
+<link rel="icon" type="image/png" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/about.css">
+</head>
+<body>
+<div class="page-loader" id="pageLoader"><div class="loader-ring"></div></div>
+<script>
+  (function(){
+    var hidden = false;
+    function hideLoader(){
+      if(hidden) return;
+      hidden = true;
+      var l = document.getElementById('pageLoader');
+      if(l) l.classList.add('hide');
+    }
+    window.addEventListener('load', function(){ setTimeout(hideLoader, 280); });
+    setTimeout(hideLoader, 1800); // safety fallback
+  })();
+</script>
+
+<div id="site-header"></div>
+
+<section class="page-hero">
+  <span class="eyebrow" data-i="aboutEyebrow">Biz haqimizda</span>
+  <h1 data-i="aboutTitle">Toza kiyim — sodda marosim</h1>
+</section>
+
+<div class="intro-block">
+  <p data-i="aboutIntro">Velira 2024-yilda Andijonda tashkil topgan — maqsadimiz kir yuvishni og'ir yumushdan sodda va yoqimli odatga aylantirish edi.</p>
+</div>
+
+<section class="mission">
+  <div class="mission-inner">
+    <div class="owl-carousel product-carousel" id="missionCarousel">
+      <div class="item"><img src="images/velira-ocean.jpg" alt="Velira Ocean"></div>
+      <div class="item"><img src="images/velira-lavender.jpg" alt="Velira Wild Lavender"></div>
+    </div>
+</div>
+    <div class="mission-text">
+      <span class="eyebrow" data-i="missionEyebrow">Missiyamiz</span>
+      <h2 data-i="missionTitle">Nega biz buni qilamiz</h2>
+      <p data-i="missionText">Poroshok qutilari og'ir, o'lchash noqulay, ortiqcha kimyoviy moddalar esa terini quritadi. Biz bitta yupqa listda — to'g'ri doza, kuchli formula va yoqimli hidni birlashtirdik. Har bir list aniq bir marta yuvish uchun mo'ljallangan — ortiqcha sarflash yo'q.</p>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="section-head">
+    <span class="eyebrow" data-i="valuesEyebrow">Qadriyatlarimiz</span>
+    <h2 data-i="valuesTitle">Bizni boshqaradigan uchta narsa</h2>
+  </div>
+  <div class="values-grid">
+    <div class="value-card"><div class="num">01</div><h3 data-i="v1t">Halollik</h3><p data-i="v1d">Tarkibda yashirin narsa yo'q — har bir ingredient qadoqda ko'rsatilgan.</p></div>
+    <div class="value-card"><div class="num">02</div><h3 data-i="v2t">Sifat</h3><p data-i="v2d">Har bir partiya sinovdan o'tadi, faqat standartlarga javob beradigan mahsulot yetkaziladi.</p></div>
+    <div class="value-card"><div class="num">03</div><h3 data-i="v3t">G'amxo'rlik</h3><p data-i="v3d">Mijoz savoliga tez javob, muammoga tezkor yechim — bizning odatimiz.</p></div>
+  </div>
+</section>
+
+<section class="team">
+  <div class="team-inner">
+    <img class="team-photo" src="images/quanlifang.jpg" alt="Velira jamoasi">
+    <span class="eyebrow" data-i="teamEyebrow">Jamoa</span>
+    <h2 data-i="teamTitle">Kichik jamoa, katta g'amxo'rlik</h2>
+    <p data-i="teamText">Velira ortida O'zbekistondagi kichik jamoa turibdi — mahsulot tanlovidan tortib, har bir buyurtmani yetkazib berishgacha. Savolingiz bo'lsa, to'g'ridan-to'g'ri Telegram orqali yozing — bot emas, jonli odam javob beradi.</p>
+    <div class="social-row" id="aboutSocialRow"></div>
+  </div>
+</section>
+
+<div id="site-footer"></div>
+
+<!-- Cart drawer (kept for header cart icon consistency) -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-drawer-head">
+    <h3 data-i="cartTitle">Sizning savatingiz</h3>
+    <button class="close-btn" id="closeCartBtn">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="cart-drawer-foot" id="cartFoot">
+    <div class="cart-total-row"><span data-i="cartTotal">Jami</span><span id="cartTotalValue">0 UZS</span></div>
+    <button class="checkout-btn" id="checkoutBtn" data-i="checkoutBtn">Buyurtma berish</button>
+  </div>
+</div>
+<div class="modal-overlay" id="checkoutModal">
+  <div class="modal">
+    <h3 data-i="checkoutTitle">Buyurtmani rasmiylashtirish</h3>
+    <p class="modal-sub" data-i="checkoutSub">Ma'lumotlaringizni qoldiring — administrator siz bilan bog'lanadi.</p>
+    <form id="checkoutForm">
+      <div class="field"><label data-i="labelName">Ismingiz</label><input name="name" required data-i-placeholder="placeholderName" placeholder="Ism Familiya"></div>
+      <div class="field"><label data-i="labelPhone">Telefon raqam</label><input name="phone" required data-i-placeholder="placeholderPhone" placeholder="+998 90 000 00 00"></div>
+      <div class="field"><label data-i="labelEmail">Email (ixtiyoriy)</label><input type="email" name="email" data-i-placeholder="placeholderEmail" placeholder="email@example.com"></div>
+      <div class="field"><label data-i="labelAddress">Manzil (ixtiyoriy)</label><input name="address" data-i-placeholder="placeholderAddress" placeholder="Shahar, ko'cha, uy"></div>
+      <div class="field"><label data-i="labelComment">Izoh (ixtiyoriy)</label><textarea name="comment" data-i-placeholder="placeholderComment" placeholder="Qo'shimcha izoh..."></textarea></div>
+      <button type="submit" class="modal-submit"><span class="btn-label" data-i="submitOrder">Buyurtmani tasdiqlash</span><span class="btn-spinner"></span></button>
+      <div class="form-status" id="orderStatus"></div>
+    </form>
+    <button class="close-btn close-btn-abs" id="closeCheckoutBtn">✕</button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init({ publicKey: "0HBwuawTW_FpYC_cB" });</script>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="js/telegram-webapp.js"></script>
+<script src="js/components.js"></script>
+<script src="js/i18n.js"></script>
+<script src="js/api.js"></script>
+<script src="js/cart.js"></script>
+<script>
+  renderHeader('about');
+  renderFooter();
+  document.getElementById('aboutSocialRow').innerHTML = `
+    <a class="social-btn" href="${SOCIAL_LINKS.telegram}" target="_blank" rel="noopener" aria-label="Telegram">${ICON_TELEGRAM}</a>
+    <a class="social-btn" href="${SOCIAL_LINKS.instagram}" target="_blank" rel="noopener" aria-label="Instagram">${ICON_INSTAGRAM}</a>`;
+
+  $(function(){
+    $('.product-carousel').owlCarousel({
+      items: 1,
+      loop: true,
+      dots: true,
+      nav: true,
+      autoplay: true,
+      autoplayTimeout: 5000,
+      autoplayHoverPause: true,
+      smartSpeed: 600,
+      mouseDrag: true,
+      touchDrag: true
+    });
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Velira — Admin panel</title>
+<link rel="icon" href="images/logo-transparent.png">
+<link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+
+<div class="admin-login" id="loginScreen">
+  <div class="login-card">
+    <img src="images/logo.png" alt="Velira">
+    <h1>Admin panelga kirish</h1>
+    <p>Davom etish uchun parolni kiriting.</p>
+    <div class="login-err" id="loginErr"></div>
+    <input type="password" id="loginPassword" placeholder="Parol" autocomplete="current-password">
+    <button id="loginBtn">Kirish</button>
+  </div>
+</div>
+
+<div class="admin-shell" id="adminShell">
+  <aside class="admin-sidebar">
+    <h2>🧴 Velira Admin</h2>
+    <nav>
+      <button data-panel="products" class="active">📦 Mahsulotlar</button>
+      <button data-panel="orders">🛒 Buyurtmalar</button>
+      <button data-panel="users">👥 Bot foydalanuvchilari</button>
+      <button data-panel="messages">✉️ Murojaatlar</button>
+    </nav>
+    <button class="logout-btn" id="logoutBtn">Chiqish</button>
+  </aside>
+
+  <main class="admin-main">
+    <!-- Products -->
+    <section class="panel active" id="panel-products">
+      <h1>Mahsulotlar</h1>
+
+      <div class="card">
+        <h3>➕ Yangi mahsulot qo'shish</h3>
+        <form id="productForm" class="form-grid">
+          <div><label>Nomi (UZ)*</label><input name="name_uz" required></div>
+          <div><label>Nomi (RU)</label><input name="name_ru"></div>
+          <div><label>Narxi (so'm)*</label><input name="price" type="number" min="0" required></div>
+          <div><label>Yuvishlar soni</label><input name="loads" type="number" min="0"></div>
+          <div><label>Xushbo'y hid (scent)</label><input name="scent"></div>
+          <div>
+            <label>Rasm</label>
+            <input type="file" name="imageFile" accept="image/*">
+            <img class="thumb-preview" id="thumbPreview" style="display:none">
+          </div>
+          <div class="full"><label>Tavsif (UZ)</label><textarea name="description_uz"></textarea></div>
+          <div class="full"><label>Tavsif (RU)</label><textarea name="description_ru"></textarea></div>
+          <div class="full"><button class="btn btn-primary" type="submit">Qo'shish</button></div>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3>Mavjud mahsulotlar</h3>
+        <table>
+          <thead><tr><th>Rasm</th><th>Nomi</th><th>Narx</th><th>Yuvish</th><th></th></tr></thead>
+          <tbody id="productsTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Orders -->
+    <section class="panel" id="panel-orders">
+      <h1>Buyurtmalar</h1>
+      <div class="card">
+        <table>
+          <thead><tr><th>№</th><th>Mijoz</th><th>Telefon</th><th>Manba</th><th>Jami</th><th>Sana</th><th>Status</th></tr></thead>
+          <tbody id="ordersTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Users -->
+    <section class="panel" id="panel-users">
+      <h1>Bot foydalanuvchilari</h1>
+      <div class="card">
+        <table>
+          <thead><tr><th>Ism</th><th>Username</th><th>Telefon</th><th>Telegram ID</th><th>Ro'yxatdan o'tgan</th></tr></thead>
+          <tbody id="usersTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Messages -->
+    <section class="panel" id="panel-messages">
+      <h1>Aloqa formasidagi murojaatlar</h1>
+      <div class="card">
+        <table>
+          <thead><tr><th>Ism</th><th>Aloqa</th><th>Xabar</th><th>Sana</th></tr></thead>
+          <tbody id="messagesTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="toast-admin" id="adminToast"></div>
+
+<script src="js/admin.js"></script>
+</body>
+</html>
